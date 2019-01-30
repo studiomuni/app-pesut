@@ -1,0 +1,16 @@
+<div class="body">
+    <div class="card-body">
+        <div class="row clearfix">
+            <div class="col-sm-2" *ngIf="detectScreen==1">
+                <ul>
+                    <li><br><br><br><br><br><br><br><br><br><br><br><br></li>
+                    <li [routerLink]="['/home']"> <img class="images" src="assets/images/back.png" width="100%" ></li>
+                </ul>
+            </div>
+            <div class="col-sm-8">
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+            </div>
+            <div class="col-sm-2"></div>    
+        </div>  
+    </div>
+</div>

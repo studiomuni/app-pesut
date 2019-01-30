@@ -1,0 +1,60 @@
+<div class="shop">
+    <div class="container px-lg-5">
+  <div class="row mx-lg-n5">
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="container px-lg-5">
+    <div class="row mx-lg-n5">
+      <div class="col-sm-6">
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+      <div class="col-sm-6">
+       <table cellpadding="10">
+         <tr>
+           <td><b>Name</b></td>
+           <td>:</td>
+           <td>{{this.barang.nama_barang}}</td>
+         </tr>
+          <tr>
+            <td><b>Tipe</b></td>
+            <td>:</td>
+            <td>{{this.barang.tipe_barang}}</td>
+          </tr>
+          <tr>
+            <td><b>Description</b></td>
+            <td>:</td>
+            <td>{{this.barang.keterangan_barang}}</td>
+          </tr>
+          <tr>
+              <td><b>Quantity</b></td>
+              <td>:</td>
+              <td>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+              </td>
+          </tr>
+          <tr>
+            <td><b>Harga</b></td>
+            <td>:</td>
+            <td>Rp. {{this.barang.harga_barang}}</td>
+          </tr>
+          <tr>
+            <td><button class="btn btn-primary">Beli</button></td>
+          </tr>
+       </table>
+    </div>
+    </div>
+  </div>

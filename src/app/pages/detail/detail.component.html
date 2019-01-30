@@ -1,0 +1,49 @@
+<div class="body">
+    <div class="card-body">
+        <div class="row clearfix">
+            <div class="col-sm-1"></div>   
+            <div *ngIf="id == 1" class="col-sm-6">
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+            </div>
+            <div *ngIf="id == 2" class="col-sm-6">
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages2"></ngx-gallery>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                        <table>
+                            <tr>
+                                <td>Id</td>
+                                <td>{{this.id}}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{this.name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td>{{this.price}}</td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td><select class="form-control" style="width:30%">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>{{this.price}}</td>
+                            </tr>
+                        </table>
+                        <br><br>
+                    <button [routerLink]="['/purchasing', this.id]"  class="btn btn-round btn-primary"id="detail">Beli Produk</button>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>    
+        </div>  
+    </div>
+</div>

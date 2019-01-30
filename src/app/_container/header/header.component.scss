@@ -1,0 +1,32 @@
+  .small-nav .nav-item .nav-link{
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 12px;
+      margin-right: 20px;
+      color: gray;
+      border-left: solid 1px gray;
+      border-right: none;
+    }
+    .navbar{
+      /* position: sticky; */
+
+      border-top: solid 1px gray;
+      background-color: black;
+      height: 90px;
+    }
+    .navbar-brand{
+      margin-left: 30px;
+      color: #ffba00;
+      font-size: 25px;
+      font-family: 'Allerta Stencil', sans-serif;
+    }
+    .navbar-nav{
+    background-color: #000;
+    }
+    .nav-link{
+      /* border-left: solid 1px grey; */
+      margin-left: 40px;
+      margin-right: -10px;
+      font-family: 'Noto Sans', sans-serif;
+      color: white;
+    }
+    

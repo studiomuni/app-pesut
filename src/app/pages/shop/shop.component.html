@@ -1,0 +1,40 @@
+    <div class="shop">
+      <div class="container px-lg-5">
+    <div class="row mx-lg-n5">
+      <div class="col-sm-2">
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="container px-lg-5">
+      <div class="row mx-lg-n5">
+        <div class="col-sm-3">
+          <div class="category-link">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><h4>Category Products</h4></li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="produk-a">
+            <div class="row">
+              <div class="col-sm-4" *ngFor="let item of barang  | paginate: { itemsPerPage: 6, currentPage: page }" >
+                <div class="thumbnail">
+                  <a [routerLink]="['/detail-barang', item.id]"><img src="data:image/jpeg;base64,{{item.foto}}" class="img-fluid img-thumbnail" alt="produk1"></a>
+                  <h6 class="text-center">{{item.nama_barang}}</h6>
+                  <p class="text-center">Rp {{item.harga_barang}},-</p>
+                </div>
+              </div>
+            </div>
+          <br>
+          </div>
+          <div class="has-text-centered">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+      </div>
+      </div>
+    </div>
