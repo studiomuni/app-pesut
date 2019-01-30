@@ -1,5 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {appService} from '../../services/app.service';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import{barang_mdl} from '../../_model/barangMdl';
 
 @Component({
   selector: 'app-page_services',
@@ -7,29 +10,47 @@ import {Router} from '@angular/router';
   styleUrls: ['./page_services.component.scss']
 })
 export class pageservicesComponent implements OnInit {
-  public today:any;
-  public innerWidth: any;
-  public detectScreen: any;
-  public images:any;
+  dtOptions: DataTables.Settings = {};
 
-  constructor(private router: Router){
+  public data: any;
+  public temp_var: Object=false;  
+
+  constructor(private router: Router,
+              private sevice: appService,
+              private http: HttpClient){
   }
 
   ngOnInit(){
-  
-    this.images = [{'id':'1','name':'1','url':'assets/images/1.jpg','description':'Motor A'},
-                   {'id':'2','name':'2','url':'assets/images/2.jpg','description':'Motor B'}];
-    
-    var now= Date.now();
-    var date = new Date(now);
-    var ampm;
-    var hours = date.getHours();
-    if (hours < 12 ){
-      ampm = 'A.M';
-    } else {
-      ampm = 'P.M';
-    }
-    this.today = date.getHours() + ':' + date.getMinutes() + ' ' + ampm ;
+  //   let dataTablesParameters: any;
+  //   this.sevice.datatables(dataTablesParameters).subscribe(resp => {
+  //     this.data = resp;
+  //     this.temp_var = true;
+  //     console.log(this.data); 
+  // });
+
+  const that = this;
+  this.dtOptions = {
+    pagingType: 'full_numbers',
+    pageLength: 5,
+    serverSide: true,
+    processing: true,
+    searching: false,
+    ajax: (dataTablesParameters: any, callback) => {
+      that.sevice.datatables(dataTablesParameters).subscribe(resp => {
+          callback({
+            recordsTotal: resp.recordsTotal,
+            recordsFiltered: resp.recordsFiltered,
+            data: resp.data
+          });
+        });
+    },
+    columns: [ {data: 'nama_barang', title: 'Nama Barang', className: 'text-left'},
+               {data: 'jenis_barang', title: 'Jenis Barang', className: 'text-left'},
+               {data: 'tipe_barang', title: 'Tipe Barang', className: 'text-left'},
+               {data: 'harga', title: 'Harga Barang', className: 'text-left'},
+               {data: 'keterangan_barang', title: 'Keterangan', className: 'text-left'},]
+  };
+
   }
 
 

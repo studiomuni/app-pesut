@@ -9,6 +9,8 @@ import { pageservicesComponent } from '../app/pages/page_services/page_services.
 import { ShopComponent } from '../app/pages/shop/shop.component';
 import { detailBarang } from '../app/pages/detail-barang/detail-barang.component';
 
+import { addbarangComponent } from '../app/pages/page_services/add-barang/add-barang.component';
+
 
 
 
@@ -50,6 +52,10 @@ const routes: Routes = [
   { 
     path: 'detail-barang/:id', 
     component: detailBarang 
+  },
+  { 
+    path: 'service/addbarang', 
+    component: addbarangComponent 
   }
 
 

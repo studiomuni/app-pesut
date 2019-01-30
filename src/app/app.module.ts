@@ -27,6 +27,10 @@ import { ArchwizardModule } from 'angular-archwizard';
 
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
+import { DataTablesModule } from 'angular-datatables';
+
+import { addbarangComponent } from '../app/pages/page_services/add-barang/add-barang.component';
+
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -40,7 +44,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     DetailComponent,
     pageservicesComponent,
     ShopComponent,
-    detailBarang
+    detailBarang,
+    addbarangComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     FormWizardModule,
     ArchwizardModule,
     NgxPaginationModule,
-    ChartsModule
+    ChartsModule,
+    DataTablesModule
    
   ],
   providers: [{
